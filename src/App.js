@@ -5,9 +5,7 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-  allBooks: [],
-  haveRead: [],
-  willRead: []
+  allBooks: []
 }
 
 componentDidMount(){
@@ -19,7 +17,12 @@ componentDidMount(){
 
   render() {
     return (
-    <BookList/>
+    <div>
+      <BookList
+        allBooks = {this.state.allBooks}
+      />
+      <p>Hi There </p>
+    </div>
     )
   }
 }
