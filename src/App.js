@@ -4,7 +4,12 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
-  
+  state = {
+  allBooks: [],
+  haveRead: [],
+  willRead: []
+}
+
 
   render() {
     return (
