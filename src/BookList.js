@@ -1,6 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class BookList extends React.Component {
+  static PropTypes = {
+    allBooks: PropTypes.array.isRequired
+  }
   state = {
     /**
      * TODO: Instead of using this state variable to keep track of which page
@@ -10,7 +14,7 @@ class BookList extends React.Component {
      */
     showSearchPage: false
   }
-  
+
     render() {
       return(
         <div className="app">
@@ -199,6 +203,6 @@ class BookList extends React.Component {
         </div>
       )
     }
-} 
+}
 
 export default BookList

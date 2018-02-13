@@ -21,7 +21,6 @@ componentDidMount(){
       <BookList
         allBooks = {this.state.allBooks}
       />
-      <p>Hi There </p>
     </div>
     )
   }
