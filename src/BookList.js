@@ -16,6 +16,10 @@ class BookList extends React.Component {
   }
 
     render() {
+      const { allBooks } = this.props
+
+      console.log()
+
       return(
         <div className="app">
           {this.state.showSearchPage ? (
@@ -43,6 +47,8 @@ class BookList extends React.Component {
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
+                <p>{allBooks.filter(book => book.shelf === "currentlyReading")
+                .map(book => book.title)}</p>
               </div>
               <div className="list-books-content">
                 <div>

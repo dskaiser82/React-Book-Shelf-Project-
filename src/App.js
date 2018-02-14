@@ -19,7 +19,7 @@ componentDidMount(){
     return (
     <div>
       <BookList
-        allBooks = {this.state.allBooks}
+        allBooks={this.state.allBooks}
       />
     </div>
     )
