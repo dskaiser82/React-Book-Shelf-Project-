@@ -50,7 +50,11 @@ class BookList extends React.Component {
                 <ul>
                   {allBooks.filter(book => book.shelf === "wantToRead")
                     .map((book) =>(
-                      <li key={book.id}>{book.title}</li>
+                      <li key={book.id}>{book.title}
+                        <img src={book.imageLinks.thumbnail}/>
+                        
+                      </li>
+
                     ))
                   }
                 </ul>
