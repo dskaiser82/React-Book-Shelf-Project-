@@ -52,7 +52,7 @@ class BookList extends React.Component {
                     .map((book) =>(
                       <li key={book.id}>{book.title}
                         <img src={book.imageLinks.thumbnail}/>
-                        
+                        <span>{book.authors}</span>
                       </li>
 
                     ))
