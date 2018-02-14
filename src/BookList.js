@@ -47,8 +47,14 @@ class BookList extends React.Component {
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
-                <p>{allBooks.filter(book => book.shelf === "currentlyReading")
-                .map(book => book.title)}</p>
+                <ul>
+                  {allBooks.filter(book => book.shelf === "wantToRead")
+                    .map((book) =>(
+                      <li key={book.id}>{book.title}</li>
+                    ))
+                  }
+                </ul>
+
               </div>
               <div className="list-books-content">
                 <div>
