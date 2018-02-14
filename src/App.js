@@ -15,11 +15,15 @@ componentDidMount(){
  })
 }
 
+getValue = (value) => {
+  console.log("Hi Denny" + value)
+}
   render() {
     return (
     <div>
       <BookList
         allBooks={this.state.allBooks}
+        getValue={this.getValue}
       />
     </div>
     )

@@ -16,9 +16,7 @@ class BookList extends React.Component {
   }
 
     render() {
-      const { allBooks } = this.props
-
-      console.log()
+      const { allBooks, getValue } = this.props
 
       return(
         <div className="app">
@@ -57,6 +55,7 @@ class BookList extends React.Component {
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
+                      <button onClick={() => getValue("Lucky Dodod")}>Fuck Yeah</button>
                       <ol className="books-grid">
 
                         {allBooks.filter(book => book.shelf === "currentlyReading")
@@ -117,7 +116,6 @@ class BookList extends React.Component {
                     </div>
                   </div>
 
-
                   {/* Book Section */}
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Have Read</h2>
@@ -149,9 +147,6 @@ class BookList extends React.Component {
                       </ol>
                     </div>
                   </div>
-
-
-
 
                 </div>
               </div>
