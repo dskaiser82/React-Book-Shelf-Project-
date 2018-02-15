@@ -55,7 +55,7 @@ class BookList extends React.Component {
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
-                      <button onClick={() => getValue("Lucky Dodod")}>Fuck Yeah</button>
+                      <button onClick={() => getValue()}>Fuck Yeah</button>
                       <ol className="books-grid">
 
                         {allBooks.filter(book => book.shelf === "currentlyReading")

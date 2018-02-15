@@ -15,8 +15,12 @@ componentDidMount(){
  })
 }
 
-getValue = (value) => {
-  console.log("Hi Denny" + value)
+getValue = () => {
+  this.setState((previousState) => {
+  previousState.allBooks[0].shelf = 'Fucking Kaiserrr and Doobies';
+  console.log(previousState);
+});
+
 }
   render() {
     return (
