@@ -17,10 +17,12 @@ componentDidMount(){
 
 getValue = () => {
   this.setState((previousState) => {
-  previousState.allBooks[0].shelf = 'Fucking Kaiserrr and Doobies';
-  console.log(previousState);
-  
+  previousState.allBooks[5].shelf = 'currentlyReading';
+  // console.log(previousState);
+
 });
+let book1 = this.state.allBooks[5]
+  BooksAPI.update(book1, "currentlyReading")
 
 }
   render() {
