@@ -32,6 +32,9 @@ onChanger = (num) => {
    // let book1 = this.state.allBooks[0]
    //   BooksAPI.update(book1, "wantToRead")
    //   console.log(book1)
+
+   const results = this.state.allBooks.filter(book => book.id === serial)
+   console.log(results[0].title)
 }
 
 
