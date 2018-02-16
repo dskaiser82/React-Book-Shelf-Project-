@@ -25,8 +25,9 @@ let book1 = this.state.allBooks[2]
 }
 
 onChanger = (num) => {
-  const sel = document.getElementById(num).value;
-   console.log(sel)
+  const sel = document.getElementById(num);
+  const val = sel.value
+   console.log(val)
 }
 
 
