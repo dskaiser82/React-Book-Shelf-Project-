@@ -13,11 +13,10 @@ componentDidMount(){
     this.setState({ allBooks })
     console.log(allBooks)
  })
-}
-
-getValue = () => {
 
 }
+
+
 
 onChanger = (num) => {
   const sel = document.getElementById(num);
@@ -29,9 +28,9 @@ onChanger = (num) => {
    //   previousState.allBooks[2].shelf = 'wantToRead';
    //   // console.log(previousState);
    // });
-   // let book1 = this.state.allBooks[0]
-   //   BooksAPI.update(book1, "wantToRead")
-   //   console.log(book1)
+   let book1 = this.state.allBooks[0]
+     BooksAPI.update(book1, "currentlyReading")
+     console.log(book1)
 
    const results = this.state.allBooks.filter(book => book.id === serial)
    console.log(results[0].title)
