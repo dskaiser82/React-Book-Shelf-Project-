@@ -16,19 +16,22 @@ componentDidMount(){
 }
 
 getValue = () => {
-  this.setState((previousState) => {
-  previousState.allBooks[2].shelf = 'wantToRead';
-  // console.log(previousState);
-});
+//   this.setState((previousState) => {
+//   previousState.allBooks[2].shelf = 'wantToRead';
+//   // console.log(previousState);
+// });
 let book1 = this.state.allBooks[2]
   BooksAPI.update(book1, "wantToRead")
+  console.log(book1)
 }
 
-onChanger = (num) => {
+onChanger = (num, callback) => {
   const sel = document.getElementById(num);
   const val = sel.value
   const serial = sel.getAttribute("data-serial")
    console.log(serial+val)
+
+  callback //for getValue func
 }
 
 
