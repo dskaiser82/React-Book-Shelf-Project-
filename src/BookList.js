@@ -16,7 +16,8 @@ class BookList extends React.Component {
   }
 
     render() {
-      const { allBooks, getValue } = this.props
+      const { allBooks, getValue, onChanger } = this.props
+
 
       return(
         <div className="app">
@@ -65,7 +66,7 @@ class BookList extends React.Component {
                                 <div className="book-top">
                                   <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                   <div className="book-shelf-changer">
-                                    <select>
+                                    <select id="sel-1"  onChange={() => onChanger("sel-1")}>
                                       <option value="none" disabled>Move to...</option>
                                       <option value="currentlyReading">Currently Reading</option>
                                       <option value="wantToRead">Want to Read</option>

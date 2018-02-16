@@ -24,6 +24,11 @@ let book1 = this.state.allBooks[2]
   BooksAPI.update(book1, "wantToRead")
 }
 
+onChanger = (num) => {
+  const sel = document.getElementById(num).value;
+   console.log(sel)
+}
+
 
 
   render() {
@@ -32,6 +37,7 @@ let book1 = this.state.allBooks[2]
       <BookList
         allBooks={this.state.allBooks}
         getValue={this.getValue}
+        onChanger={this.onChanger}
       />
     </div>
     )
