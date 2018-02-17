@@ -45,8 +45,6 @@ componentDidMount(){
     <div>
       <BookList
         allBooks={this.state.allBooks}
-        getValue={this.getValue}
-        onChanger={this.onChanger}
       />
     </div>
     )

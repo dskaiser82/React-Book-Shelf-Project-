@@ -13,13 +13,15 @@ class BookList extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: false,
-    targetData: ""
+    targetData: {}
   }
 
 
-updateTarget = (targetData) => {
+updateTarget = (targetData,event) => {
   console.log(targetData)
   this.setState({targetData:targetData})
+  console.log(event)
+
 }
 
     render() {
@@ -75,7 +77,7 @@ updateTarget = (targetData) => {
                                   <div className="book-shelf-changer">
 
                                     <select id={book.id} data-serial={book.id} ref={book.id}
-                                      onChange={(event) => this.updateTarget(event.target.value)}
+                                      onChange={(event) => this.updateTarget(event.target.value, event.target.id)}
                                       >
 
                                       <option value="none" disabled>Move to...</option>
