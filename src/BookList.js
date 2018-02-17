@@ -13,22 +13,24 @@ class BookList extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: false,
-    targetData: ""
+    targetData: {},
+    targetId: {}
   }
 
 
 updateTarget = (targetData,targetId) => {
-  console.log(targetData)
-  console.log(targetId)
   this.setState({targetData:targetData})
   this.setState({targetId:targetId})
-  console.log(this.state)
 
+//On first chnage not updating state, but it does it on second one and after
+  console.log(this.state)
 }
+
+
 
     render() {
       const { allBooks} = this.props
-      const targetData = this.state
+    
 
 
 
