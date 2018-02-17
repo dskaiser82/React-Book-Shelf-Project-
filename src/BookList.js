@@ -13,20 +13,23 @@ class BookList extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     showSearchPage: false,
-    targetData: {}
+    targetData: ""
   }
 
 
-updateTarget = (targetData,event) => {
+updateTarget = (targetData,targetId) => {
   console.log(targetData)
+  console.log(targetId)
   this.setState({targetData:targetData})
-  console.log(event)
+  this.setState({targetId:targetId})
+  console.log(this.state)
 
 }
 
     render() {
       const { allBooks} = this.props
       const targetData = this.state
+
 
 
       return(
