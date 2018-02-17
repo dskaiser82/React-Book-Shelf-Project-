@@ -18,8 +18,8 @@ class BookList extends React.Component {
 
 
 updateTarget = (targetData) => {
-  this.setState({ targetData: targetData})
-  console.log(this.state.targetData)
+  console.log(targetData)
+  this.setState({targetData:targetData})
 }
 
     render() {
