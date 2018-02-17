@@ -20,7 +20,7 @@ class BookList extends React.Component {
 checkStatus = () => {console.log(this.state)}
 
 updateTarget = (targetData,targetId) => {
-  this.setState({targetData: targetData}, this.checkStatus)
+  this.setState({targetData: targetData, targetId:targetId}, this.checkStatus)
 }
 
 
