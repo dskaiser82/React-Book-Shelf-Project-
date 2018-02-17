@@ -12,11 +12,19 @@ class BookList extends React.Component {
      * users can use the browser's back and forward buttons to navigate between
      * pages, as well as provide a good URL they can bookmark and share.
      */
-    showSearchPage: false
+    showSearchPage: false,
+    targetData: ""
   }
 
+
+updateTarget = (targetData) => {
+  this.setState({ targetData: targetData})
+  console.log(this.state.targetData)
+}
+
     render() {
-      const { allBooks, getValue, onChanger } = this.props
+      const { allBooks} = this.props
+      const targetData = this.state
 
 
       return(
@@ -56,7 +64,6 @@ class BookList extends React.Component {
                   <div className="bookshelf">
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
-                      <button onClick={() => getValue()}>Fuck Yeah</button>
                       <ol className="books-grid">
 
                         {allBooks.filter(book => book.shelf === "currentlyReading")
@@ -66,9 +73,11 @@ class BookList extends React.Component {
                                 <div className="book-top">
                                   <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                   <div className="book-shelf-changer">
-                                    <select id="sel-1" data-serial={book.id}
-                                      onChange={() => onChanger(book.id)}
+
+                                    <select id="sel-1" data-serial={book.id} ref={book.id}
+                                      onChange={(event) => this.updateTarget(event.target.value)}
                                       >
+
                                       <option value="none" disabled>Move to...</option>
                                       <option value="currentlyReading">Currently Reading</option>
                                       <option value="wantToRead">Want to Read</option>

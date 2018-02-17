@@ -16,11 +16,13 @@ componentDidMount(){
 
 }
 
-onChanger = (num) => {
-  const sel = document.getElementById(num);
-  const val = sel.value
-  const serial = sel.getAttribute("data-serial")
-   console.log(serial+val)
+// onChanger = (change) => {
+//
+//    console.log(this.ref)
+  // const sel = document.getElementById(num);
+  // const val = sel.value
+  // const serial = sel.getAttribute("data-serial")
+  //  console.log(serial+val)
 
    //   this.setState((previousState) => {
    //   previousState.allBooks[2].shelf = 'wantToRead';
@@ -32,9 +34,9 @@ onChanger = (num) => {
    //   BooksAPI.update(book1, "currentlyReading")
    //   console.log(book1)
 
-   const results = this.state.allBooks.filter(book => book.id === serial)
-   console.log(results[0].title)
-}
+   // const results = this.state.allBooks.filter(book => book.id === serial)
+   // console.log(results[0].title)
+// }
 
 
 
