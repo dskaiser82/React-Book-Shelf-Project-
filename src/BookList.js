@@ -18,17 +18,23 @@ class BookList extends React.Component {
   }
 
 
-handleChange= (targetData,targetId) => {
-  console.log(this.state)
-  this.setState({targetData:targetData})
-  this.setState({targetId:targetId})
+updateTarget = (targetData,targetId) => {
+  // this.setState({targetData:targetData})
+  // this.setState({targetId:targetId})
 
-//On first chnage not updating state, but  on second one and after
+  //We may need to do prev state set state
+  console.log(targetId + targetData)
+
 
 }
 
+
+
     render() {
       const { allBooks} = this.props
+      const targetData = this.state
+
+
 
       return(
         <div className="app">
@@ -78,7 +84,7 @@ handleChange= (targetData,targetId) => {
                                   <div className="book-shelf-changer">
 
                                     <select id={book.id} data-serial={book.id} ref={book.id}
-                                      onChange={(event) => this.handleChange(event.target.value, event.target.id)}
+                                      onChange={(event) => this.updateTarget(event.target.value, event.target.id)}
                                       >
 
                                       <option value="none" disabled>Move to...</option>
