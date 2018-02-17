@@ -17,15 +17,10 @@ class BookList extends React.Component {
     targetId: {}
   }
 
+checkStatus = () => {console.log(this.state)}
 
 updateTarget = (targetData,targetId) => {
-  // this.setState({targetData:targetData})
-  // this.setState({targetId:targetId})
-
-  //We may need to do prev state set state
-  console.log(targetId + targetData)
-
-
+  this.setState({targetData: targetData}, this.checkStatus)
 }
 
 
