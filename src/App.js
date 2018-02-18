@@ -20,7 +20,7 @@ componentDidMount(){
 checkStatus = () => {
   console.log(this.state)
 
-  const bookie = this.state.allBooks.filter(book => book.shelf === "read")
+  const bookie = this.state.allBooks.filter(book => book.shelf === this.state.targetShelf)
   console.log(bookie)
 }
 
