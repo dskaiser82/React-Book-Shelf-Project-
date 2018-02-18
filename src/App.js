@@ -22,8 +22,13 @@ checkStatus = () => {
 
 
       this.setState((previousState) => {
+
+          const bookie =
+          this.state.allBooks.filter(book => book.id === this.state.targetId)
+          console.log(bookie)
+
       previousState.allBooks[0].shelf = this.state.targetShelf;
-      // console.log(previousState);
+      console.log(previousState.allBooks[0]);
     });
 
 
@@ -31,13 +36,6 @@ checkStatus = () => {
 
 updateTarget = (targetShelf,targetId) => {
   this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
-
-
-
-  const bookie =
-  this.state.allBooks.filter(book => book.id === this.state.targetId)
-  console.log(bookie)
-
 
 }
 
