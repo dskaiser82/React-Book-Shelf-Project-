@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class BookList extends React.Component {
   static PropTypes = {
-    allBooks: PropTypes.array.isRequired
+    allBooks: PropTypes.array.isRequired,
+    updateTarget: PropTypes.func.isRequired
   }
   state = {
     /**

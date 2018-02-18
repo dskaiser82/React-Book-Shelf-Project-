@@ -19,11 +19,12 @@ componentDidMount(){
 
 checkStatus = () => {console.log(this.state)}
 
+
 updateTarget = (targetShelf,targetId) => {
   this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
 }
 
-
+bookState
 
 // onChanger = (change) => {
 //
