@@ -17,10 +17,6 @@ class BookList extends React.Component {
 
   }
 
-
-
-
-
     render() {
       const { allBooks, updateTarget} = this.props
 
