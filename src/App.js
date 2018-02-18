@@ -20,12 +20,25 @@ componentDidMount(){
 checkStatus = () => {
   console.log(this.state)
 
-  const bookie = this.state.allBooks.filter(book => book.shelf === this.state.targetShelf)
-  console.log(bookie)
+
+      this.setState((previousState) => {
+      previousState.allBooks[0].shelf = this.state.targetShelf;
+      // console.log(previousState);
+    });
+
+
 }
 
 updateTarget = (targetShelf,targetId) => {
   this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
+
+
+
+  const bookie =
+  this.state.allBooks.filter(book => book.id === this.state.targetId)
+  console.log(bookie)
+
+
 }
 
 
