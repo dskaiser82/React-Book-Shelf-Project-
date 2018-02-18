@@ -5,16 +5,25 @@ import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-  allBooks: []
+  allBooks: [],
+  targetShelf: {},
+  targetId: {}
 }
 
 componentDidMount(){
   BooksAPI.getAll().then((allBooks) => {
     this.setState({ allBooks })
-    console.log(allBooks)
  })
 
 }
+
+checkStatus = () => {console.log(this.state)}
+
+updateTarget = (targetShelf,targetId) => {
+  this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
+}
+
+
 
 // onChanger = (change) => {
 //
@@ -45,6 +54,7 @@ componentDidMount(){
     <div>
       <BookList
         allBooks={this.state.allBooks}
+        updateTarget={this.updateTarget}
       />
     </div>
     )
