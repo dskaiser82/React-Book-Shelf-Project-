@@ -17,22 +17,23 @@ componentDidMount(){
 }
 
 //On Select Grab Shelf and Id of Book
-checkStatus = () => {
-  console.log(this.state)
+// checkStatus = () => {
+//   console.log(this.state)
+//
+// }
 
-}
-
+//We run this Onchange of Select
 updateTarget = (targetShelf,targetId) => {
-  //you may not need these states << just needed the vars
-  // this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
-
-    this.setState((previousState) => {
-    const bookie = previousState.allBooks.filter(book => book.id === targetId);
-    bookie[0].shelf = targetShelf;
-    console.log(bookie);
+  //Update the Book
+  this.setState((previousState) => {
+  const bookie = previousState.allBooks.filter(book => book.id === targetId);
+  bookie[0].shelf = targetShelf;
   });
 
-
+  //Send Updated Book to API
+  const bookSend = this.state.allBooks.filter(book => book.id === targetId);
+  const bookZero = bookSend[0]
+  BooksAPI.update(bookZero.id, targetShelf)
 }
 
 
@@ -45,10 +46,7 @@ updateTarget = (targetShelf,targetId) => {
    //   // console.log(previousState);
    // });
 
-   //Updater
-   // let book1 = this.state.allBooks[0]
-   //   BooksAPI.update(book1, "currentlyReading")
-   //   console.log(book1)
+
 
 
    // console.log(results[0].title)
