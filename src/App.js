@@ -14,25 +14,23 @@ componentDidMount(){
   BooksAPI.getAll().then((allBooks) => {
     this.setState({ allBooks })
  })
-
 }
 
+//On Select Grab Shelf and Id of Book
 checkStatus = () => {console.log(this.state)}
-
-
 updateTarget = (targetShelf,targetId) => {
   this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
 }
 
-bookState
+changeShelf = () => {
+  const bookie = this.state.allBooks.filter(book => book.id === "read")
+  console.log("yoyoyo")
+
+}
+
 
 // onChanger = (change) => {
 //
-//    console.log(this.ref)
-  // const sel = document.getElementById(num);
-  // const val = sel.value
-  // const serial = sel.getAttribute("data-serial")
-  //  console.log(serial+val)
 
    //   this.setState((previousState) => {
    //   previousState.allBooks[2].shelf = 'wantToRead';
@@ -44,9 +42,9 @@ bookState
    //   BooksAPI.update(book1, "currentlyReading")
    //   console.log(book1)
 
-   // const results = this.state.allBooks.filter(book => book.id === serial)
+
    // console.log(results[0].title)
-// }
+
 
 
 
@@ -56,6 +54,7 @@ bookState
       <BookList
         allBooks={this.state.allBooks}
         updateTarget={this.updateTarget}
+        changeShelf={this.changeShelf}
       />
     </div>
     )
