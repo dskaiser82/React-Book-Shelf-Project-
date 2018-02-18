@@ -23,11 +23,13 @@ checkStatus = () => {
 }
 
 updateTarget = (targetShelf,targetId) => {
-  this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
+  //you may not need these states << just needed the vars
+  // this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
 
     this.setState((previousState) => {
-    previousState.allBooks[0].shelf = targetShelf;
-    // console.log(previousState);
+    const bookie = previousState.allBooks.filter(book => book.id === targetId);
+    bookie[0].shelf = targetShelf;
+    console.log(bookie);
   });
 
 
