@@ -16,6 +16,7 @@ class BooksApp extends React.Component {
       this.setState({ allBooks })
       console.log(allBooks)
    })
+   //So These Search Dont Have book.shelf.  But I may cheat anf use Book.rating and put the string there
    BooksAPI.search("design").then((search) => {
      this.setState({ search })
      console.log(search)
