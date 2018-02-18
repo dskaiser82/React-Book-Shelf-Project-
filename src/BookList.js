@@ -22,7 +22,7 @@ class BookList extends React.Component {
 
 
     render() {
-      const { allBooks, updateTarget, changeShelf} = this.props
+      const { allBooks, updateTarget} = this.props
 
 
       return(
@@ -54,8 +54,6 @@ class BookList extends React.Component {
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
-
-              <button onClick={()=>{changeShelf()}}>tester</button>
 
               <div className="list-books-content">
                 <div>

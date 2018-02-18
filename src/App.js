@@ -17,16 +17,17 @@ componentDidMount(){
 }
 
 //On Select Grab Shelf and Id of Book
-checkStatus = () => {console.log(this.state)}
+checkStatus = () => {
+  console.log(this.state)
+
+  const bookie = this.state.allBooks.filter(book => book.shelf === "read")
+  console.log(bookie)
+}
+
 updateTarget = (targetShelf,targetId) => {
   this.setState({targetShelf: targetShelf, targetId:targetId}, this.checkStatus)
 }
 
-changeShelf = () => {
-  const bookie = this.state.allBooks.filter(book => book.id === "read")
-  console.log("yoyoyo")
-
-}
 
 
 // onChanger = (change) => {
@@ -54,7 +55,6 @@ changeShelf = () => {
       <BookList
         allBooks={this.state.allBooks}
         updateTarget={this.updateTarget}
-        changeShelf={this.changeShelf}
       />
     </div>
     )
