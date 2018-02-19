@@ -18,7 +18,6 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then((allBooks) => {
       this.setState({ allBooks })
    })
-
   }
 
   componentWillUpdate(){
@@ -42,7 +41,7 @@ class BooksApp extends React.Component {
     BooksAPI.update(bookZero.id, targetShelf)
   }
 
-  //** Search View **//
+//** Search View **//
   //Grab Values from options
   grabSearch = (targetShelf,targetId) => {
     //Update the Book
@@ -51,24 +50,13 @@ class BooksApp extends React.Component {
     const bookie = previousState.searchBooks.filter(book => book.id === targetId);
     bookie[0].shelf = targetShelf;
 
-    //Last Push this book to allBooks array
+    //Last Push this book to allBooks array, then send up to the Back end API
     previousState.allBooks.push(bookie[0])
+    BooksAPI.update(bookie[0].id, targetShelf)
     });
-
     console.log(this.state)
-
-    //For mergeing All SearcheB's into AllB's
-        // const myBooks = this.state.allBooks
-        // const openBooks = this.state.searchBooks
-        // const merger = arr1.concat(arr2)
-        // merger[7].shelf = targetShelf
-        //
-        // this.setState((previousState) => {
-        // const totals = previousState.allBooks = merger;
-        //
-        // });
-        // console.log(merger)
   }
+
   //Change query.state based on user search
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
