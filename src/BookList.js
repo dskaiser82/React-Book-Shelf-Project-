@@ -20,7 +20,7 @@ class BookList extends React.Component {
 
       return(
         <div className="app">
-  
+
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
@@ -141,9 +141,11 @@ class BookList extends React.Component {
               </div>
 
               {/* Open Search */}
-              <div className="open-search">
-                <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-              </div>
+              <Link
+                  to="/search"
+                  className="open-search"
+                >SEARCH NEW BOOKS
+              </Link>
             </div>
           )}
         </div>

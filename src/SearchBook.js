@@ -18,6 +18,12 @@ class SearchBook extends Component{
           <ol className="books-grid"></ol>
         </div>
       </div>
+      {/* Open Search */}
+      <Link
+          to="/"
+          className="home"
+        >MY BOOKS
+      </Link>
     </div>
     )
   }
