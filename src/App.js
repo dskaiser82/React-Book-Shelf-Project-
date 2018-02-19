@@ -64,8 +64,14 @@ class BooksApp extends React.Component {
         updateTarget={this.updateTarget}
       />
       )}/>
-
-
+      <Route path="/search" render={({ history }) => (
+          <SearchBook
+            // onCreateContact={(contact) => {
+            //   this.CreateContact(contact)
+            //   history.push('/')
+            // }}
+          />
+        )}/>
     </div>
     )
   }
