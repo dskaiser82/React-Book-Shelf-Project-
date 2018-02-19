@@ -11,7 +11,7 @@ class BooksApp extends React.Component {
   targetShelf: {},  //prob dont need this
   targetId: {},   //prob dont need this
   searchBooks:[],
-  query: "ibsen"
+  query: ""
 }
 
   componentDidMount(){
@@ -22,6 +22,7 @@ class BooksApp extends React.Component {
   }
 
   componentWillUpdate(){
+    if (this.state.query)
     BooksAPI.search(this.state.query).then((searchBooks) => {
       this.setState({ searchBooks })
     })
