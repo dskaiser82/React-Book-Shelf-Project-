@@ -5,13 +5,12 @@ import { Link} from 'react-router-dom';
 class SearchBook extends Component{
 
   render(){
-    const { searchBooks, updateTarget} = this.props
+    const { searchBooks, updateSearch} = this.props
 
     return(
     <div>
       <div className="search-books">
         <div className="search-books-bar">
-          <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
           <div className="search-books-input-wrapper">
             <input type="text" placeholder="Search by title or author"/>
           </div>
@@ -29,7 +28,7 @@ class SearchBook extends Component{
                       <div className="book-shelf-changer">
 
                         <select id={book.id}
-                          onChange={(event) => updateTarget(event.target.value, event.target.id)}
+                          onChange={(event) => updateSearch(event.target.value, event.target.id)}
                           >
 
                           <option value="none" defaultValue>Move to...</option>

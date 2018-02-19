@@ -47,13 +47,19 @@ class BooksApp extends React.Component {
 
 
     //Send Updated Book to API
-    const bookSend = this.state.allBooks.filter(book => book.id === targetId);
-    const bookZero = bookSend[0]
-    BooksAPI.update(bookZero.id, targetShelf)
-
-
+    // const bookSend = this.state.allBooks.filter(book => book.id === targetId);
+    // const bookZero = bookSend[0]
+    // BooksAPI.update(bookZero.id, targetShelf)
   }
 
+  updateSearch = (targetShelf,targetId) => {
+    //Update the Book
+    this.setState((previousState) => {
+    const bookie = previousState.searchBooks.filter(book => book.id === targetId);
+    bookie[0].shelf = targetShelf;
+    });
+    console.log(this.state)
+}
   render() {
     return (
     <div>
@@ -66,7 +72,7 @@ class BooksApp extends React.Component {
       <Route path="/search" render={({ history }) => (
           <SearchBook
             searchBooks={this.state.searchBooks}
-            updateTarget={this.updateTarget}
+            updateSearch={this.updateSearch}
             //DK << THE HISTORY STUFF SO IT CAN SEND YOU BACK TO HOME PAGE ON AN ACTION SEE MY NOTES
             // onCreateContact={(contact) => {
             //   this.CreateContact(contact)
