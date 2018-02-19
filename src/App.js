@@ -47,9 +47,9 @@ class BooksApp extends React.Component {
 
 
     //Send Updated Book to API
-    // const bookSend = this.state.allBooks.filter(book => book.id === targetId);
-    // const bookZero = bookSend[0]
-    // BooksAPI.update(bookZero.id, targetShelf)
+    const bookSend = this.state.allBooks.filter(book => book.id === targetId);
+    const bookZero = bookSend[0]
+    BooksAPI.update(bookZero.id, targetShelf)
   }
 
   updateSearch = (targetShelf,targetId) => {
