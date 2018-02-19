@@ -8,8 +8,6 @@ import './App.css'
 class BooksApp extends React.Component {
   state = {
   allBooks: [],
-  targetShelf: {},  //prob dont need this
-  targetId: {},   //prob dont need this
   searchBooks:[],
   query: ""
 }
@@ -75,13 +73,13 @@ class BooksApp extends React.Component {
           <SearchBook
             searchBooks={this.state.searchBooks}
             query={this.state.query}
-            grabSearch={this.grabSearch}
+            grabSearch={
+              (targetShelf, targetId) => {
+                this.grabSearch(targetShelf, targetId)
+                history.push('/')
+              }
+            }
             updateQuery={this.updateQuery}
-            //DK << THE HISTORY STUFF SO IT CAN SEND YOU BACK TO HOME PAGE ON AN ACTION SEE MY NOTES
-            // onCreateContact={(contact) => {
-            //   this.CreateContact(contact)
-            //   history.push('/')
-            // }}
           />
         )}/>
     </div>
