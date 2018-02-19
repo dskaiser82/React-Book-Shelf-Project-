@@ -144,7 +144,7 @@ class BookList extends React.Component {
               <Link
                   to="/search"
                   className="open-search"
-                >SEARCH NEW BOOKS
+                >+
               </Link>
             </div>
           )}

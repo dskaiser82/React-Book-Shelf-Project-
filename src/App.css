@@ -45,8 +45,15 @@ body, .app {
 
 .open-search {
   position: fixed;
-  right: 25px;
-  bottom: 25px;
+right: 25px;
+bottom: 25px;
+background-color: green;
+color: white;
+width: 60px;
+font-size: 33px;
+border-radius: 28px;
+text-decoration: none;
+text-align: center;
 }
 .open-search a {
   display: block;
