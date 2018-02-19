@@ -32,11 +32,17 @@ class BooksApp extends React.Component {
     bookie[0].shelf = targetShelf;
     });
 
-    const arr1 = this.state.allBooks
-    const arr2 = this.state.searchBooks
-    const merger = arr1.concat(arr2)
-    merger[7].shelf = "currentlyReading"
-    console.log(merger)
+//For mergeing All SearcheB's into AllB's     
+    // const arr1 = this.state.allBooks
+    // const arr2 = this.state.searchBooks
+    // const merger = arr1.concat(arr2)
+    // merger[7].shelf = targetShelf
+    //
+    // this.setState((previousState) => {
+    // const totals = previousState.allBooks = merger;
+    //
+    // });
+    // console.log(merger)
 
 
     //Send Updated Book to API
