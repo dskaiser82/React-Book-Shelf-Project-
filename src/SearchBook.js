@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom';
 class SearchBook extends Component{
 
   render(){
-    const { searchBooks, updateSearch} = this.props
+    const { searchBooks, updateSearch, searchTerm} = this.props
 
     return(
     <div>
@@ -16,6 +16,12 @@ class SearchBook extends Component{
           </div>
         </div>
         <div className="search-books-results">
+          {/* BACK HOME*/}
+          <Link
+              to="/"
+              className="home"
+            > <span>BACK TO MY BOOKS</span>
+          </Link>
           <ol className="books-grid">
 
             {searchBooks.filter(book => book.shelf !== "currentlyReading")
@@ -50,12 +56,6 @@ class SearchBook extends Component{
           </ol>
         </div>
       </div>
-      {/* BACK HOME*/}
-      <Link
-          to="/"
-          className="home"
-        > <span>BACK TO MY BOOKS</span>
-      </Link>
     </div>
     )
   }

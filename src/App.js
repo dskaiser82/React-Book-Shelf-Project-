@@ -60,6 +60,7 @@ class BooksApp extends React.Component {
     });
     console.log(this.state)
 }
+
   render() {
     return (
     <div>
@@ -72,6 +73,7 @@ class BooksApp extends React.Component {
       <Route path="/search" render={({ history }) => (
           <SearchBook
             searchBooks={this.state.searchBooks}
+            searchTerm={this.state.searchTerm}
             updateSearch={this.updateSearch}
             //DK << THE HISTORY STUFF SO IT CAN SEND YOU BACK TO HOME PAGE ON AN ACTION SEE MY NOTES
             // onCreateContact={(contact) => {
