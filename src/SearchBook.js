@@ -29,9 +29,7 @@ class SearchBook extends Component{
           </Link>
           <ol className="books-grid">
 
-            {searchBooks.filter(book => book.shelf !== "currentlyReading"
-            && book.shelf !== "read" && book.shelf !== "wantToRead")
-              .map((book) =>(
+            {searchBooks.map((book) =>(
                 <li key={book.id}>
                   <div className="book">
                     <div className="book-top">
