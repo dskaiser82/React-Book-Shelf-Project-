@@ -140,7 +140,7 @@ class BookList extends React.Component {
                                   <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                   <div className="book-shelf-changer">
 
-                                    <select id={book.id} 
+                                    <select id={book.id}
                                       onChange={(event) => updateTarget(event.target.value, event.target.id)}
                                       >
 

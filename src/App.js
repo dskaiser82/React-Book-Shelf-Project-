@@ -30,13 +30,21 @@ class BooksApp extends React.Component {
     this.setState((previousState) => {
     const bookie = previousState.allBooks.filter(book => book.id === targetId);
     bookie[0].shelf = targetShelf;
-
     });
+
+    const arr1 = this.state.allBooks
+    const arr2 = this.state.searchBooks
+    const merger = arr1.concat(arr2)
+    merger[7].shelf = "currentlyReading"
+    console.log(merger)
+
 
     //Send Updated Book to API
     const bookSend = this.state.allBooks.filter(book => book.id === targetId);
     const bookZero = bookSend[0]
     BooksAPI.update(bookZero.id, targetShelf)
+
+
   }
 
   render() {
