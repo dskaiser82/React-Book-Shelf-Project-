@@ -5,7 +5,7 @@ import { Link} from 'react-router-dom';
 class SearchBook extends Component{
 
   render(){
-    const { searchBooks, updateSearch, searchTerm} = this.props
+    const { searchBooks, grabSearch, searchTerm} = this.props
 
     return(
     <div>
@@ -35,7 +35,7 @@ class SearchBook extends Component{
                       <div className="book-shelf-changer">
 
                         <select id={book.id}
-                          onChange={(event) => updateSearch(event.target.value, event.target.id)}
+                          onChange={(event) => grabSearch(event.target.value, event.target.id)}
                           >
 
                           <option value="none" defaultValue>Move to...</option>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class BookList extends React.Component {
   static PropTypes = {
     allBooks: PropTypes.array.isRequired,
-    updateTarget: PropTypes.func.isRequired
+    grabTarget: PropTypes.func.isRequired
   }
   state = {
 
@@ -15,7 +15,7 @@ class BookList extends React.Component {
   }
 
     render() {
-      const { allBooks, updateTarget} = this.props
+      const { allBooks, grabTarget} = this.props
 
 
       return(
@@ -44,7 +44,7 @@ class BookList extends React.Component {
                                   <div className="book-shelf-changer">
 
                                     <select id={book.id}
-                                      onChange={(event) => updateTarget(event.target.value, event.target.id)}
+                                      onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
                                       <option value="none" defaultValue>Move to...</option>
@@ -80,7 +80,7 @@ class BookList extends React.Component {
                                   <div className="book-shelf-changer">
 
                                     <select id={book.id}
-                                      onChange={(event) => updateTarget(event.target.value, event.target.id)}
+                                      onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
                                       <option value="none" defaultValue>Move to...</option>
@@ -116,7 +116,7 @@ class BookList extends React.Component {
                                   <div className="book-shelf-changer">
 
                                     <select id={book.id}
-                                      onChange={(event) => updateTarget(event.target.value, event.target.id)}
+                                      onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
                                       <option value="none" defaultValue>Move to...</option>

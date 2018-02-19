@@ -26,7 +26,7 @@ class BooksApp extends React.Component {
   }
 
   //We run this Onchange of Select
-  updateTarget = (targetShelf,targetId) => {
+  grabTarget = (targetShelf,targetId) => {
     //Update the Book
     this.setState((previousState) => {
     const bookie = previousState.allBooks.filter(book => book.id === targetId);
@@ -52,14 +52,15 @@ class BooksApp extends React.Component {
     BooksAPI.update(bookZero.id, targetShelf)
   }
 
-  updateSearch = (targetShelf,targetId) => {
+  //
+  grabSearch = (targetShelf,targetId) => {
     //Update the Book
     this.setState((previousState) => {
     const bookie = previousState.searchBooks.filter(book => book.id === targetId);
     bookie[0].shelf = targetShelf;
     });
     console.log(this.state)
-}
+  }
 
   render() {
     return (
@@ -67,14 +68,14 @@ class BooksApp extends React.Component {
     <Route exact path="/" render={() => (
       <BookList
         allBooks={this.state.allBooks}
-        updateTarget={this.updateTarget}
+        grabTarget={this.grabTarget}
       />
       )}/>
       <Route path="/search" render={({ history }) => (
           <SearchBook
             searchBooks={this.state.searchBooks}
             searchTerm={this.state.searchTerm}
-            updateSearch={this.updateSearch}
+            grabSearch={this.grabSearch}
             //DK << THE HISTORY STUFF SO IT CAN SEND YOU BACK TO HOME PAGE ON AN ACTION SEE MY NOTES
             // onCreateContact={(contact) => {
             //   this.CreateContact(contact)
