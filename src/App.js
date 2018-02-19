@@ -64,8 +64,9 @@ class BooksApp extends React.Component {
 
 
   updateQuery = (query) => {
-    // this.setState({ query: query.trim() })
-    console.log("Boby" + query)
+    this.setState({ query: query.trim() })
+    console.log(query)
+    console.log(this.state)
   }
 
   render() {
