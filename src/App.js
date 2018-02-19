@@ -1,6 +1,7 @@
 import React from 'react';
 import BookList from './BookList.js';
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI';
+import { Route } from 'react-router-dom';
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -32,7 +33,7 @@ class BooksApp extends React.Component {
     bookie[0].shelf = targetShelf;
     });
 
-//For mergeing All SearcheB's into AllB's     
+//For mergeing All SearcheB's into AllB's
     // const arr1 = this.state.allBooks
     // const arr2 = this.state.searchBooks
     // const merger = arr1.concat(arr2)
@@ -56,10 +57,14 @@ class BooksApp extends React.Component {
   render() {
     return (
     <div>
+    <Route exact path="/" render={() => (
       <BookList
         allBooks={this.state.allBooks}
         updateTarget={this.updateTarget}
       />
+      )}/>
+
+
     </div>
     )
   }
