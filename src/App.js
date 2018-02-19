@@ -11,7 +11,7 @@ class BooksApp extends React.Component {
   targetShelf: {},  //prob dont need this
   targetId: {},   //prob dont need this
   searchBooks:[],
-  searchTerm: "ibsen"
+  query: "ibsen"
 }
 
   componentDidMount(){
@@ -19,7 +19,7 @@ class BooksApp extends React.Component {
       this.setState({ allBooks })
    })
    //So These Search Dont Have book.shelf.  But I may cheat anf use Book.rating and put the string there
-   BooksAPI.search(this.state.searchTerm).then((searchBooks) => {
+   BooksAPI.search(this.state.query).then((searchBooks) => {
      this.setState({ searchBooks })
      console.log(this.state)
    })
@@ -52,7 +52,7 @@ class BooksApp extends React.Component {
     BooksAPI.update(bookZero.id, targetShelf)
   }
 
-  //
+  //Search View: Grab Values from options
   grabSearch = (targetShelf,targetId) => {
     //Update the Book
     this.setState((previousState) => {
@@ -60,6 +60,10 @@ class BooksApp extends React.Component {
     bookie[0].shelf = targetShelf;
     });
     console.log(this.state)
+  }
+
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() })
   }
 
   render() {
