@@ -62,8 +62,10 @@ class BooksApp extends React.Component {
     console.log(this.state)
   }
 
+
   updateQuery = (query) => {
-    this.setState({ query: query.trim() })
+    // this.setState({ query: query.trim() })
+    console.log("Boby" + query)
   }
 
   render() {
@@ -78,8 +80,9 @@ class BooksApp extends React.Component {
       <Route path="/search" render={({ history }) => (
           <SearchBook
             searchBooks={this.state.searchBooks}
-            searchTerm={this.state.searchTerm}
+            query={this.state.query}
             grabSearch={this.grabSearch}
+            updateQuery={this.updateQuery}
             //DK << THE HISTORY STUFF SO IT CAN SEND YOU BACK TO HOME PAGE ON AN ACTION SEE MY NOTES
             // onCreateContact={(contact) => {
             //   this.CreateContact(contact)

@@ -5,14 +5,19 @@ import { Link} from 'react-router-dom';
 class SearchBook extends Component{
 
   render(){
-    const { searchBooks, grabSearch, searchTerm} = this.props
+    const { searchBooks, grabSearch, updateQuery} = this.props
 
     return(
     <div>
       <div className="search-books">
         <div className="search-books-bar">
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author"/>
+            <input
+              type="text"
+              placeholder="Search by title or author"
+              onChange={() => updateQuery()}
+              // onChange={(event) => updateQuery(event.target.value)}
+            />
           </div>
         </div>
         <div className="search-books-results">
