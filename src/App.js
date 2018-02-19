@@ -8,7 +8,8 @@ class BooksApp extends React.Component {
   allBooks: [],
   targetShelf: {},  //prob dont need this
   targetId: {},   //prob dont need this
-  search:[]
+  searchBooks:[],
+  searchTerm: "design"
 }
 
   componentDidMount(){
@@ -17,9 +18,9 @@ class BooksApp extends React.Component {
       console.log(allBooks)
    })
    //So These Search Dont Have book.shelf.  But I may cheat anf use Book.rating and put the string there
-   BooksAPI.search("design").then((search) => {
-     this.setState({ search })
-     console.log(search)
+   BooksAPI.search(this.state.searchTerm).then((searchBooks) => {
+     this.setState({ searchBooks })
+     console.log(this.state)
    })
   }
 
