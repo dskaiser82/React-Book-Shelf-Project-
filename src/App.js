@@ -36,36 +36,40 @@ class BooksApp extends React.Component {
     bookie[0].shelf = targetShelf;
     });
 
-//For mergeing All SearcheB's into AllB's
-    // const arr1 = this.state.allBooks
-    // const arr2 = this.state.searchBooks
-    // const merger = arr1.concat(arr2)
-    // merger[7].shelf = targetShelf
-    //
-    // this.setState((previousState) => {
-    // const totals = previousState.allBooks = merger;
-    //
-    // });
-    // console.log(merger)
-
-
     //Send Updated Book to API
     const bookSend = this.state.allBooks.filter(book => book.id === targetId);
     const bookZero = bookSend[0]
     BooksAPI.update(bookZero.id, targetShelf)
   }
 
-  //Search View: Grab Values from options
+  //** Search View **//
+  //Grab Values from options
   grabSearch = (targetShelf,targetId) => {
     //Update the Book
     this.setState((previousState) => {
+    //Find which Book this is, then give it the shelf string
     const bookie = previousState.searchBooks.filter(book => book.id === targetId);
     bookie[0].shelf = targetShelf;
+
+    //Last Push this book to allBooks array
+    previousState.allBooks.push(bookie[0])
     });
+
     console.log(this.state)
+
+    //For mergeing All SearcheB's into AllB's
+        // const myBooks = this.state.allBooks
+        // const openBooks = this.state.searchBooks
+        // const merger = arr1.concat(arr2)
+        // merger[7].shelf = targetShelf
+        //
+        // this.setState((previousState) => {
+        // const totals = previousState.allBooks = merger;
+        //
+        // });
+        // console.log(merger)
   }
-
-
+  //Change query.state based on user search
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
   }
