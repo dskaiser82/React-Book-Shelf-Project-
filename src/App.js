@@ -18,11 +18,13 @@ class BooksApp extends React.Component {
     BooksAPI.getAll().then((allBooks) => {
       this.setState({ allBooks })
    })
-   //So These Search Dont Have book.shelf.  But I may cheat anf use Book.rating and put the string there
-   BooksAPI.search(this.state.query).then((searchBooks) => {
-     this.setState({ searchBooks })
-     console.log(this.state)
-   })
+
+  }
+
+  componentWillUpdate(){
+    BooksAPI.search(this.state.query).then((searchBooks) => {
+      this.setState({ searchBooks })
+    })
   }
 
   //We run this Onchange of Select
@@ -65,8 +67,6 @@ class BooksApp extends React.Component {
 
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
-    console.log(query)
-    console.log(this.state)
   }
 
   render() {
