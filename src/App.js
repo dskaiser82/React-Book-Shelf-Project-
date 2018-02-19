@@ -11,7 +11,7 @@ class BooksApp extends React.Component {
   targetShelf: {},  //prob dont need this
   targetId: {},   //prob dont need this
   searchBooks:[],
-  searchTerm: "design"
+  searchTerm: "ibsen"
 }
 
   componentDidMount(){
