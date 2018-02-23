@@ -15,6 +15,7 @@ class BooksApp extends React.Component {
   componentDidMount(){
     BooksAPI.getAll().then((allBooks) => {
       this.setState({ allBooks })
+      console.log(this.state)
    })
   }
 
@@ -58,6 +59,7 @@ class BooksApp extends React.Component {
   //Change query.state based on user search
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
+    console.log(this.state)
   }
 
   render() {

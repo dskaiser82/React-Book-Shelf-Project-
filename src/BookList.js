@@ -8,10 +8,6 @@ class BookList extends React.Component {
     grabTarget: PropTypes.func.isRequired
   }
   state = {
-
-
-    query: ""
-
   }
 
     render() {
@@ -37,6 +33,7 @@ class BookList extends React.Component {
 
                         {allBooks.filter(book => book.shelf === "currentlyReading")
                           .map((book) =>(
+                              book.length &&
                             <li key={book.id}>
                               <div className="book">
                                 <div className="book-top">
