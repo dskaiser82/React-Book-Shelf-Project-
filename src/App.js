@@ -19,12 +19,7 @@ class BooksApp extends React.Component {
    })
   }
 
-  componentWillUpdate(){
-    if (this.state.query)
-    BooksAPI.search(this.state.query).then((searchBooks) => {
-      this.setState({ searchBooks })
-    })
-  }
+
 
   //We run this Onchange of Select
   grabTarget = (targetShelf,targetId) => {
@@ -58,8 +53,13 @@ class BooksApp extends React.Component {
 
   //Change query.state based on user search
   updateQuery = (query) => {
+    if (this.state.query)
+    BooksAPI.search(this.state.query).then((searchBooks) => {
+      this.setState({ searchBooks })
+    })
+
     var reg = /^[a-z]+$/i;
-    if(reg.test(query) ) //Check letters only
+    if(reg.test(query) && query !== "design" ) //Check letters only
     this.setState({ query: query.trim() })
     console.log(this.state)
   }
