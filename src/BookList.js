@@ -33,7 +33,7 @@ class BookList extends React.Component {
 
                         {allBooks.filter(book => book.shelf === "currentlyReading")
                           .map((book) =>(
-                              book.length &&
+                              book.imageLinks.thumbnail ||
                             <li key={book.id}>
                               <div className="book">
                                 <div className="book-top">
