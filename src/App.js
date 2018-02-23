@@ -58,6 +58,8 @@ class BooksApp extends React.Component {
 
   //Change query.state based on user search
   updateQuery = (query) => {
+    var reg = /^[a-z]+$/i;
+    if(reg.test(query) ) //Check letters only
     this.setState({ query: query.trim() })
     console.log(this.state)
   }

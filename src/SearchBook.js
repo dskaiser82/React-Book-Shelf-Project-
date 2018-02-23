@@ -30,7 +30,7 @@ class SearchBook extends Component{
           <ol className="books-grid">
 
             {searchBooks.map((book) =>(
-                  book.length && //help validate search results
+                  book.imageLinks.thumbnail.length && //help validate search results
                 <li key={book.id}>
                   <div className="book">
                     <div className="book-top">
