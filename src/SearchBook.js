@@ -34,7 +34,8 @@ class SearchBook extends Component{
                   <div className="book">
                     <div className="book-top">
                       <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(
-                        ${book.imageLinks ? book.imageLinks.thumbnail : ''
+                        ${book.imageLinks ? book.imageLinks.thumbnail :
+                          'http://via.placeholder.com/160x220?text=No%20Cover'
                          })` }}></div>
 
                       <div className="book-shelf-changer">
