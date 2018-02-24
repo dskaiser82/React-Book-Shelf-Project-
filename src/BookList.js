@@ -43,7 +43,6 @@ class BookList extends React.Component {
                                       onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
-                                      <option value="none" defaultValue>Move to...</option>
                                       <option value="currentlyReading">Currently Reading</option>
                                       <option value="wantToRead">Want to Read</option>
                                       <option value="read">Read</option>
@@ -79,9 +78,8 @@ class BookList extends React.Component {
                                       onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
-                                      <option value="none" defaultValue>Move to...</option>
-                                      <option value="currentlyReading">Currently Reading</option>
                                       <option value="wantToRead">Want to Read</option>
+                                      <option value="currentlyReading">Currently Reading</option>
                                       <option value="read">Read</option>
                                       <option value="none">None</option>
                                     </select>
@@ -115,10 +113,10 @@ class BookList extends React.Component {
                                       onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                       >
 
-                                      <option value="none" defaultValue>Move to...</option>
+                                      <option value="read">Read</option>
                                       <option value="currentlyReading">Currently Reading</option>
                                       <option value="wantToRead">Want to Read</option>
-                                      <option value="read">Read</option>
+                                      <option value="none">None</option>
 
                                     </select>
                                   </div>
