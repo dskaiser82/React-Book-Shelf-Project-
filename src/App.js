@@ -59,7 +59,7 @@ class BooksApp extends React.Component {
     })
 
     var reg = /^[a-z]+$/i;
-    if(reg.test(query) && query !== "design" ) //Check letters only
+    if(reg.test(query)) //Check letters only
     this.setState({ query: query.trim() })
     console.log(this.state)
   }

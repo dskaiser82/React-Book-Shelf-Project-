@@ -29,10 +29,13 @@ class SearchBook extends Component{
           <ol className="books-grid">
 
             {searchBooks.map((book) =>(
+
                 <li key={book.id}>
                   <div className="book">
                     <div className="book-top">
-                      <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                      <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(
+                        ${book.imageLink ? book.imageLink.thumbnail : ''
+                         })` }}></div>
 
                       <div className="book-shelf-changer">
 
