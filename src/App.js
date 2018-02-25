@@ -19,8 +19,6 @@ class BooksApp extends React.Component {
    })
   }
 
-
-
   //We run this Onchange of Select
   grabTarget = (targetShelf,targetId) => {
     //Update the Book
@@ -58,7 +56,8 @@ class BooksApp extends React.Component {
       this.setState({ searchBooks })
     })
 
-    var reg = /^[a-z]+$/i;
+
+    let reg = /^[a-z]+$/i;
     if(reg.test(query)) //Check letters only
     this.setState({ query: query.trim() })
     console.log(this.state)

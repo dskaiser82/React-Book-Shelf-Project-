@@ -13,7 +13,6 @@ class BookList extends React.Component {
     render() {
       const { allBooks, grabTarget} = this.props
 
-
       return(
         <div className="app">
 
