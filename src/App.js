@@ -56,8 +56,8 @@ class BooksApp extends React.Component {
       this.setState({ searchBooks })
     })
 
-    //Note for Reviewer: We Got errors when Query didn't match search termies
-    //So I fixed by checking against the terms (first letters of)
+    //Note for Reviewer: I got errors when Query didn't match search terms
+    //So I fixed by checking against the terms (first few letters of)
     let termies =['And', 'Art', 'Artif', 'Astr', 'Aus', 'Base', 'Bask', 'Bhag', 'Biog', 'Brie', 'Bus', 'Cam', 'Cer', 'Chr', 'Class', 'Com', 'Coo', 'Cric', 'Cyc', 'Desai', 'Desi', 'Dev', 'Dig', 'Dram', 'Draw', 'Duma', 'Ed', 'Evev', 'Fan', 'Fil', 'Fin', 'Fir', 'Fit', 'Foo', 'Fut', 'Gam', 'Gan', 'Hom', 'Hor', 'Hug', 'Ibs', 'Jou', 'Kaf', 'King', 'Lah', 'Lar', 'Le', 'Lit', 'Make', 'Man', 'Mar', 'Mon', 'Mys', 'Neg', 'Pai', 'Phi', 'Pho', 'Poe', 'Prod', 'Prog', 'Reac', 'Red', 'Riv', 'Rob', 'Row', 'Sat', 'Sci', 'Shak', 'Sin', 'Swim', 'Tal', 'Thr', 'Tim', 'Tol', 'Tra', 'Ult', 'Vir', 'Web', 'i']
     let lower = termies.map(term => term.toLowerCase())
     let matchMe = lower.indexOf(query.toLowerCase()) > -1
