@@ -7,8 +7,6 @@ class BookList extends React.Component {
     allBooks: PropTypes.array.isRequired,
     grabTarget: PropTypes.func.isRequired
   }
-  state = {
-  }
 
     render() {
       const { allBooks, grabTarget} = this.props
