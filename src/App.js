@@ -51,16 +51,21 @@ class BooksApp extends React.Component {
 
   //Change query.state based on user search
   updateQuery = (query) => {
-    if (this.state.query)
+    if (this.state.query) //check if there is a query
     BooksAPI.search(this.state.query).then((searchBooks) => {
+      //check if searcBooks gets results in the array
+      //Because the array wont even fill of the correct search term doesn't
+      //hit that ${api}/search`
+      if(searchBooks.length)
       this.setState({ searchBooks })
     })
+
 
     this.setState({ query: query })
 
     console.log(this.state)
   }
-
+  
   render() {
     return (
     <div>
