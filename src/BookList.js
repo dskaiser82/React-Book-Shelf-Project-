@@ -12,18 +12,26 @@ class BookList extends React.Component {
       const { allBooks, grabTarget} = this.props
       const shelves = [
         {
+         title: "currentlyReading",
          books: allBooks.filter(book => book.shelf === 'currentlyReading')
-         .map(book => book.title)
        },
        {
         books: allBooks.filter(book => book.shelf === 'wantToRead')
-        .map(book => book.title)
+        // .map(book => book.title)
       },
         ]
-        console.log(shelves[0].books)
+
+
+    const foo = shelves.map(shelf => shelf.books)
+    console.log(foo[0][1])
+
+
+
 
       return(
         <div className="app">
+
+
 
             <div className="list-books">
               <div className="list-books-title">
