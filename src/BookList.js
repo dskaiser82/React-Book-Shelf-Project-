@@ -12,18 +12,22 @@ class BookList extends React.Component {
       const { allBooks, grabTarget} = this.props
       const shelves = [
         {
+        title: "Currently Reading",
          shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
            // .map(book => book.title)
        },
        {
+        title: "Want to Read",
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
         // .map(book => book.title)
       },
         ]
 
+const fooTits = shelves.map(shelf => shelf.title)
+///////////////////
   const foo = shelves.filter(shelf => shelf.shelf)
   const money = foo[1].shelf.map(book => book.title)
-    console.log(money)
+    console.log(fooTits)
 
 
   const  one = allBooks.filter(book => book.shelf === "currentlyReading")
@@ -45,9 +49,9 @@ class BookList extends React.Component {
               </div>
 
 
-                {money.map((book) =>(
-                    <div key={book[0]} className="bookshelf">
-                <h2 className="bookshelf-title">Want to Read</h2>
+                {fooTits.map((book) =>(
+              <div key={book[0]} className="bookshelf">
+                <h2 className="bookshelf-title">{book}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
                 {money.map((book) =>(
@@ -78,7 +82,7 @@ class BookList extends React.Component {
                 }
               </ol>
             </div>
-                </div>
+          </div>
           ))
         }
 
