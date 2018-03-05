@@ -13,16 +13,17 @@ class BookList extends React.Component {
       const shelves = [
         {
          shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
-           .map(book => book.title)
+           // .map(book => book.title)
        },
        {
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
-        .map(book => book.title)
+        // .map(book => book.title)
       },
         ]
 
-  const foo = shelves.map(shelf => shelf.shelf)
-    console.log(foo)
+  const foo = shelves.filter(shelf => shelf.shelf)
+  const money = foo[1].shelf.map(book => book.title)
+    console.log(money)
 
 
   const  one = allBooks.filter(book => book.shelf === "currentlyReading")
@@ -45,8 +46,8 @@ class BookList extends React.Component {
 
               <ol className="books-grid">
 
-                {one.map((book) =>(
-                    <li key={book.id}>
+                {money.map((book) =>(
+                    <li key={book[0]}>
                       <div className="book">
                         <div className="book-top">
 
@@ -60,7 +61,6 @@ class BookList extends React.Component {
                               <option value="wantToRead">Want to Read</option>
                               <option value="read">Read</option>
                               <option value="none">None</option>
-                              <option value="none">{book.title}</option>
                             </select>
                           </div>
                         </div>
