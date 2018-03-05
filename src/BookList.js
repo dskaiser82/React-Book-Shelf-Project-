@@ -37,14 +37,15 @@ class BookList extends React.Component {
 
 
 
+
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
 
-              {/* <ol className="books-grid">
+              <ol className="books-grid">
 
-                {foo.map((book) =>(
+                {one.map((book) =>(
                     <li key={book.id}>
                       <div className="book">
                         <div className="book-top">
@@ -69,7 +70,7 @@ class BookList extends React.Component {
                     </li>
                   ))
                 }
-              </ol> */}
+              </ol>
 
               <div className="list-books-content">
                 <div>
