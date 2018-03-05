@@ -53,7 +53,7 @@ class BookList extends React.Component {
 
                           <div className="book-shelf-changer">
 
-                            <select id={book.id}
+                            <select id={book}
                               onChange={(event) => grabTarget(event.target.value, event.target.id)}
                               >
 
@@ -64,8 +64,8 @@ class BookList extends React.Component {
                             </select>
                           </div>
                         </div>
-                        <div className="book-title">{book.title}</div>
-                        <div className="book-authors">{book.authors}</div>
+                        <div className="book-title">{book}</div>
+                        <div className="book-authors">{book}</div>
                       </div>
                     </li>
                   ))
