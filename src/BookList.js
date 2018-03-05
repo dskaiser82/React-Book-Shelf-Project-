@@ -10,6 +10,17 @@ class BookList extends React.Component {
 
     render() {
       const { allBooks, grabTarget} = this.props
+      const shelves = [
+        {
+         books: allBooks.filter(book => book.shelf === 'currentlyReading')
+         .map(book => book.title)
+       },
+       {
+        books: allBooks.filter(book => book.shelf === 'wantToRead')
+        .map(book => book.title)
+      },
+        ]
+        console.log(shelves[0].books)
 
       return(
         <div className="app">

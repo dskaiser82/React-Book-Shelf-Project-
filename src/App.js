@@ -9,6 +9,7 @@ class BooksApp extends React.Component {
   state = {
   allBooks: [],
   searchBooks:[],
+
   query: ""
 }
 
@@ -66,6 +67,7 @@ class BooksApp extends React.Component {
   }
 
   render() {
+
     return (
     <div>
     <Route exact path="/" render={() => (
