@@ -13,15 +13,21 @@ class BookList extends React.Component {
       const shelves = [
         {
          shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
+           .map(book => book.title)
        },
        {
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
-        // .map(book => book.title)
+        .map(book => book.title)
       },
         ]
 
-    const foo = shelves.map(shelf => shelf)
+  const foo = shelves.map(shelf => shelf.shelf)
     console.log(foo)
+
+
+  const  one = allBooks.filter(book => book.shelf === "currentlyReading")
+    console.log(one.map((book) =>(book.title)))
+
 
 
 
@@ -35,6 +41,35 @@ class BookList extends React.Component {
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
+
+              {/* <ol className="books-grid">
+
+                {foo.map((book) =>(
+                    <li key={book.id}>
+                      <div className="book">
+                        <div className="book-top">
+
+                          <div className="book-shelf-changer">
+
+                            <select id={book.id}
+                              onChange={(event) => grabTarget(event.target.value, event.target.id)}
+                              >
+
+                              <option value="currentlyReading">Currently Reading</option>
+                              <option value="wantToRead">Want to Read</option>
+                              <option value="read">Read</option>
+                              <option value="none">None</option>
+                              <option value="none">{book.title}</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="book-title">{book.title}</div>
+                        <div className="book-authors">{book.authors}</div>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ol> */}
 
               <div className="list-books-content">
                 <div>
