@@ -44,10 +44,15 @@ class BookList extends React.Component {
                 <h1>MyReads</h1>
               </div>
 
-              <ol className="books-grid">
 
                 {money.map((book) =>(
-                    <li key={book[0]}>
+                    <div key={book[0]} className="bookshelf">
+                <h2 className="bookshelf-title">Want to Read</h2>
+                <div className="bookshelf-books">
+                  <ol className="books-grid">
+                {money.map((book) =>(
+
+                    <li key={book[0]} >
                       <div className="book">
                         <div className="book-top">
 
@@ -68,9 +73,15 @@ class BookList extends React.Component {
                         <div className="book-authors">{book}</div>
                       </div>
                     </li>
+
                   ))
                 }
               </ol>
+            </div>
+                </div>
+          ))
+        }
+
 
               <div className="list-books-content">
                 <div>
