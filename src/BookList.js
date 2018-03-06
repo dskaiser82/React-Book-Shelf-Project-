@@ -31,8 +31,13 @@ class BookList extends React.Component {
 const shelfTitles = shelves.map(shelf => shelf.title)
 ///////////////////
 
-  const foo = shelves.map(shelf => shelf.theBooks)
-  console.log(foo)
+  const foo = shelves.map(shelf => {
+    shelf.theBooks.map(book =>
+         console.log(book.title)
+
+    )
+  })
+
 
 
   // console.log(money)
@@ -59,33 +64,23 @@ const shelfTitles = shelves.map(shelf => shelf.title)
               </div>
 
 
-                {/* {shelfTitles.map((book) =>(
+                {shelfTitles.map((book) =>(
               <div key={book[0]} className="bookshelf">
                 <h2 className="bookshelf-title">{book}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
 
-                {money.map((book) =>(
+                    {shelves.filter(book => book.id === "currentlyReading")
+                      .map((book) =>(
 
-                    <li key={book[0]} >
+                    <li key={book.id} >
                       <div className="book">
                         <div className="book-top">
 
-                          <div className="book-shelf-changer">
 
-                            <select id={book}
-                              onChange={(event) => grabTarget(event.target.value, event.target.id)}
-                              >
-
-                              <option value="currentlyReading">Currently Reading</option>
-                              <option value="wantToRead">Want to Read</option>
-                              <option value="read">Read</option>
-                              <option value="none">None</option>
-                            </select>
-                          </div>
                         </div>
-                        <div className="book-title">{book}</div>
-                        <div className="book-authors">{book}</div>
+                        <div className="book-title">{book.title}</div>
+                        <div className="book-authors">{book.authors}</div>
                       </div>
                     </li>
 
@@ -95,7 +90,7 @@ const shelfTitles = shelves.map(shelf => shelf.title)
             </div>
           </div>
           ))
-        } */}
+        }
 
 
               <div className="list-books-content">
