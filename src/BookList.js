@@ -13,30 +13,37 @@ class BookList extends React.Component {
       const shelves = [
         {
         title: "Currently Reading",
+        id: "currentlyReading",
          shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
            // .map(book => book.title)
        },
        {
         title: "Want to Read",
+        id: "wantToRead",
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
         // .map(book => book.title)
       },
       {
        title: "Read",
+       id: "read",
        shelf: allBooks.filter(book => book.shelf === 'read')
        // .map(book => book.title)
      },
         ]
 
-const fooTits = shelves.map(shelf => shelf.title)
+const shelfTitles = shelves.map(shelf => shelf.title)
 ///////////////////
+
   const foo = shelves.filter(shelf => shelf.shelf)
+  console.log(foo)
+
+
   const money = foo[1].shelf.map(book => book.title)
-    console.log(fooTits)
+
 
 
   const  one = allBooks.filter(book => book.shelf === "currentlyReading")
-    console.log(one.map((book) =>(book.title)))
+    console.log(one)
 
 
 
@@ -54,7 +61,7 @@ const fooTits = shelves.map(shelf => shelf.title)
               </div>
 
 
-                {fooTits.map((book) =>(
+                {shelfTitles.map((book) =>(
               <div key={book[0]} className="bookshelf">
                 <h2 className="bookshelf-title">{book}</h2>
                 <div className="bookshelf-books">
