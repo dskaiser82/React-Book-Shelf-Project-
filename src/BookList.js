@@ -30,12 +30,10 @@ class BookList extends React.Component {
 
 
       return(
-        <div className="app">
+
 
           <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
+            
 
               <div className="bookshelf">
                 <h2 className="bookshelf-title">{shelfString}</h2>
@@ -76,7 +74,7 @@ class BookList extends React.Component {
             </div>
           </div>
 
-            </div>
+
           )}
         </div>
       )
