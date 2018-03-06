@@ -32,15 +32,20 @@ const shelfTitles = shelves.map(shelf => shelf.title)
 ///////////////////
 
   const foo = shelves.filter(shelf => shelf.shelf)
-  console.log(foo)
+  // console.log(foo)
+
+  const money = foo[0].shelf.map(book => book.title)
+  // console.log(money)
+
+for (var i = 0; i < foo.length; i++) {
+  console.log(foo[i].shelf.map(book => book.title))
+}
 
 
-  const money = foo[1].shelf.map(book => book.title)
 
-
-
+ //Currently All Books filtered bu currently Reading
   const  one = allBooks.filter(book => book.shelf === "currentlyReading")
-    console.log(one)
+    // console.log(one)
 
 
 
@@ -63,6 +68,7 @@ const shelfTitles = shelves.map(shelf => shelf.title)
                 <h2 className="bookshelf-title">{book}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
+
                 {money.map((book) =>(
 
                     <li key={book[0]} >
