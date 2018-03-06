@@ -69,17 +69,31 @@ class BooksApp extends React.Component {
   render() {
 
     return (
-    <div className="app">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
+    <div>
       <Route exact path="/" render={() => (
+        <div className="app">
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
         <BookList
           allBooks={this.state.allBooks}
           grabTarget={this.grabTarget}
           shelfString="Currently Reading"
           shelfVar="currentlyReading"
         />
+        <BookList
+          allBooks={this.state.allBooks}
+          grabTarget={this.grabTarget}
+          shelfString="Want to Read"
+          shelfVar="wantToRead"
+        />
+        <BookList
+          allBooks={this.state.allBooks}
+          grabTarget={this.grabTarget}
+          shelfString="Read"
+          shelfVar="read"
+        />
+      </div>
         )}/>
         <Route path="/search" render={({ history }) => (
             <SearchBook
