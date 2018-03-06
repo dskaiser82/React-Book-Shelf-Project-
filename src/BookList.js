@@ -53,6 +53,7 @@ class BookList extends React.Component {
                              <select id={book.id}
                                onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                >
+                               <option value="none">Move To</option> 
                                <option value="currentlyReading">Currently Reading</option>
                                <option value="wantToRead">Want to Read</option>
                                <option value="read">Read</option>
