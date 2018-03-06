@@ -28,23 +28,14 @@ class BookList extends React.Component {
      },
         ]
 
-const shelfTitles = shelves.map(shelf => shelf.title)
-
-
-shelves.map(shelf =>
-   shelf.theBooks.map(book =>
-           console.log(book.title)
-   )
-  )
-
 
       return(
         <div className="app">
 
-            <div className="list-books">
-              <div className="list-books-title">
-                <h1>MyReads</h1>
-              </div>
+          <div className="list-books">
+            <div className="list-books-title">
+              <h1>MyReads</h1>
+            </div>
 
 
               <div className="bookshelf">
@@ -80,7 +71,6 @@ shelves.map(shelf =>
                            <div className="book-authors">{book.authors}</div>
                          </div>
                        </li>
-
                   ))
                 }
               </ol>
