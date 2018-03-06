@@ -14,32 +14,28 @@ class BookList extends React.Component {
         {
         title: "Currently Reading",
         id: "currentlyReading",
-        shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
+        theBooks: allBooks.filter(book => book.shelf === 'currentlyReading')
        },
        {
         title: "Want to Read",
         id: "wantToRead",
-        shelf: allBooks.filter(book => book.shelf === 'wantToRead')
+        theBooks: allBooks.filter(book => book.shelf === 'wantToRead')
       },
       {
        title: "Read",
        id: "read",
-       shelf: allBooks.filter(book => book.shelf === 'read')
+       theBooks: allBooks.filter(book => book.shelf === 'read')
      },
         ]
 
 const shelfTitles = shelves.map(shelf => shelf.title)
 ///////////////////
 
-  const foo = shelves.filter(shelf => shelf.shelf)
-  // console.log(foo)
+  const foo = shelves.map(shelf => shelf.theBooks)
+  console.log(foo)
 
-  const money = foo[0].shelf.map(book => book.title)
+
   // console.log(money)
-
-for (var i = 0; i < foo.length; i++) {
-  console.log(foo[i].shelf.map(book => book.title))
-}
 
 
 
@@ -63,7 +59,7 @@ for (var i = 0; i < foo.length; i++) {
               </div>
 
 
-                {shelfTitles.map((book) =>(
+                {/* {shelfTitles.map((book) =>(
               <div key={book[0]} className="bookshelf">
                 <h2 className="bookshelf-title">{book}</h2>
                 <div className="bookshelf-books">
@@ -99,7 +95,7 @@ for (var i = 0; i < foo.length; i++) {
             </div>
           </div>
           ))
-        }
+        } */}
 
 
               <div className="list-books-content">
