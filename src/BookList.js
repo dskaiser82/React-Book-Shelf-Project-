@@ -76,8 +76,8 @@ const shelfTitles = shelves.map(shelf => shelf.title)
                 <div className="bookshelf-books">
                   <ol className="books-grid">
 
-                    {shelves.filter(book => book.id === book.id)
-                      .map((book) =>(
+                    {shelves.filter(shelf => shelf.id === shelf.id).map(shelf =>
+                     shelf.theBooks.map(book =>
 
                     <li key={book.id} >
                       <div className="book">
