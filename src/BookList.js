@@ -21,6 +21,11 @@ class BookList extends React.Component {
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
         // .map(book => book.title)
       },
+      {
+       title: "Read",
+       shelf: allBooks.filter(book => book.shelf === 'read')
+       // .map(book => book.title)
+     },
         ]
 
 const fooTits = shelves.map(shelf => shelf.title)
