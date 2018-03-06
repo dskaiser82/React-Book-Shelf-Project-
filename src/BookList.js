@@ -29,46 +29,22 @@ class BookList extends React.Component {
         ]
 
 const shelfTitles = shelves.map(shelf => shelf.title)
-///////////////////
 
-  // const foo = shelves.map(shelf => {
-  //   shelf.theBooks.map(book =>
-  //        console.log(book.title)
-  //   )
-  // })
 
-  const foo = shelves.filter(shelf => shelf.id === "read").map(shelf =>
+shelves.map(shelf =>
    shelf.theBooks.map(book =>
            console.log(book.title)
    )
   )
 
 
-
-
-  // console.log(money)
-
-
-
- //Currently All Books filtered bu currently Reading
-  const  one = allBooks.filter(book => book.shelf === "currentlyReading")
-    // console.log(one)
-
-
-
-
-
       return(
         <div className="app">
-
-
-
 
             <div className="list-books">
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
-
 
                 {shelfTitles.map((shelf) =>(
               <div key={shelf[0]} className="bookshelf">
@@ -77,31 +53,31 @@ const shelfTitles = shelves.map(shelf => shelf.title)
                   <ol className="books-grid">
 
                     {shelves.map(shelf =>
-                     shelf.theBooks.filter(book => book.shelf ==="read")
+                     shelf.theBooks
                      .map(book =>
 
                        <li key={book.id}>
                          <div className="book">
                            <div className="book-top">
-                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
+                             </div>
                              <div className="book-shelf-changer">
 
                                <select id={book.id}
                                  onChange={(event) => grabTarget(event.target.value, event.target.id)}
                                  >
-
                                  <option value="currentlyReading">Currently Reading</option>
                                  <option value="wantToRead">Want to Read</option>
                                  <option value="read">Read</option>
                                  <option value="none">None</option>
                                </select>
+
                              </div>
                            </div>
                            <div className="book-title">{book.title}</div>
                            <div className="book-authors">{book.authors}</div>
                          </div>
                        </li>
-                    
 
                   ))
                 }
