@@ -69,35 +69,35 @@ class BooksApp extends React.Component {
   render() {
 
     return (
-    <div>
-    <Route exact path="/" render={() => (
-      <BookList
-        allBooks={this.state.allBooks}
-        grabTarget={this.grabTarget}
-        shelfString="Currently Reading"
-        shelfVar="currentlyReading"
-      />
-      )}/>
-      <Route path="/search" render={({ history }) => (
-          <SearchBook
-            searchBooks={this.state.searchBooks}
-            query={this.state.query}
-            grabSearch={
-              (targetShelf, targetId) => {
-                this.grabSearch(targetShelf, targetId)
-                history.push('/')
-              }
-            }
-            updateQuery={this.updateQuery}
-          />
+    <div className="app">
+      <Route exact path="/" render={() => (
+        <BookList
+          allBooks={this.state.allBooks}
+          grabTarget={this.grabTarget}
+          shelfString="Currently Reading"
+          shelfVar="currentlyReading"
+        />
         )}/>
-        {/* Open Search */}
-        <Link
-            to="/search"
-            className="open-search"
-          >+
-        </Link>
-    </div>
+        <Route path="/search" render={({ history }) => (
+            <SearchBook
+              searchBooks={this.state.searchBooks}
+              query={this.state.query}
+              grabSearch={
+                (targetShelf, targetId) => {
+                  this.grabSearch(targetShelf, targetId)
+                  history.push('/')
+                }
+              }
+              updateQuery={this.updateQuery}
+            />
+          )}/>
+          {/* Open Search */}
+          <Link
+              to="/search"
+              className="open-search"
+            >+
+          </Link>
+      </div>
     )
   }
 }

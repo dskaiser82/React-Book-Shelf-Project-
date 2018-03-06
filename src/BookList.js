@@ -37,7 +37,6 @@ class BookList extends React.Component {
               <h1>MyReads</h1>
             </div>
 
-
               <div className="bookshelf">
                 <h2 className="bookshelf-title">{shelfString}</h2>
                 <div className="bookshelf-books">
@@ -45,7 +44,7 @@ class BookList extends React.Component {
 
                     {shelves.map(shelf =>
                      shelf.theBooks
-                     .filter(book => book.shelf === shelfVar)
+                     .filter(book => book.shelf === shelfVar) //shelfVar is from the component
                      .map(book =>
 
                        <li key={book.id}>
