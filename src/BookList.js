@@ -14,20 +14,17 @@ class BookList extends React.Component {
         {
         title: "Currently Reading",
         id: "currentlyReading",
-         shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
-           // .map(book => book.title)
+        shelf: allBooks.filter(book => book.shelf === 'currentlyReading')
        },
        {
         title: "Want to Read",
         id: "wantToRead",
         shelf: allBooks.filter(book => book.shelf === 'wantToRead')
-        // .map(book => book.title)
       },
       {
        title: "Read",
        id: "read",
        shelf: allBooks.filter(book => book.shelf === 'read')
-       // .map(book => book.title)
      },
         ]
 
