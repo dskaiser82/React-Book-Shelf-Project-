@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 class BookList extends React.Component {
@@ -9,7 +9,7 @@ class BookList extends React.Component {
   }
 
     render() {
-      const { allBooks, grabTarget} = this.props
+      const { allBooks, grabTarget, shelfString, shelfVar} = this.props
       const shelves = [
         {
         title: "Currently Reading",
@@ -46,17 +46,19 @@ shelves.map(shelf =>
                 <h1>MyReads</h1>
               </div>
 
-                {shelfTitles.map((shelf) =>(
-              <div key={shelf[0]} className="bookshelf">
-                <h2 className="bookshelf-title">{shelf}</h2>
+
+              <div className="bookshelf">
+                <h2 className="bookshelf-title">{shelfString}</h2>
                 <div className="bookshelf-books">
                   <ol className="books-grid">
 
                     {shelves.map(shelf =>
-                     shelf.theBooks.filter(book => book.shelf === "currentlyReading")
+                     shelf.theBooks
+                     .filter(book => book.shelf === shelfVar)
                      .map(book =>
 
                        <li key={book.id}>
+
                          <div className="book">
                            <div className="book-top">
                              <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}>
@@ -84,17 +86,7 @@ shelves.map(shelf =>
               </ol>
             </div>
           </div>
-          ))
-        }
 
-
-            
-              {/* Open Search */}
-              <Link
-                  to="/search"
-                  className="open-search"
-                >+
-              </Link>
             </div>
           )}
         </div>

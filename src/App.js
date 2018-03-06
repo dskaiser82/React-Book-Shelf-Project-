@@ -3,13 +3,13 @@ import BookList from './BookList.js';
 import SearchBook from './SearchBook.js'
 import * as BooksAPI from './BooksAPI';
 import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './App.css'
 
 class BooksApp extends React.Component {
   state = {
   allBooks: [],
   searchBooks:[],
-
   query: ""
 }
 
@@ -74,6 +74,8 @@ class BooksApp extends React.Component {
       <BookList
         allBooks={this.state.allBooks}
         grabTarget={this.grabTarget}
+        shelfString="Currently Reading"
+        shelfVar="currentlyReading"
       />
       )}/>
       <Route path="/search" render={({ history }) => (
@@ -89,6 +91,12 @@ class BooksApp extends React.Component {
             updateQuery={this.updateQuery}
           />
         )}/>
+        {/* Open Search */}
+        <Link
+            to="/search"
+            className="open-search"
+          >+
+        </Link>
     </div>
     )
   }
