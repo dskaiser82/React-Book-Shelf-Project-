@@ -47,7 +47,6 @@ class BooksApp extends React.Component {
     previousState.allBooks.push(bookie[0])
     BooksAPI.update(bookie[0].id, targetShelf)
     });
-    console.log(this.state)
   }
 
   //Change query.state based on user search
@@ -62,8 +61,6 @@ class BooksApp extends React.Component {
     })
 
     this.setState({ query: query })
-
-    console.log(this.state)
   }
 
   render() {
