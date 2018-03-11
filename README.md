@@ -1,6 +1,7 @@
 # MyReads Project
 
  Description:
+
  This is the first project for the Udacity React Nano course.  Featuring
  core basics in React Fundamentals.
 
